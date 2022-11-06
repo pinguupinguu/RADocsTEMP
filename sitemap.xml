@@ -406,7 +406,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.retroachievements.org/guidelines/compatibility-testing/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.retroachievements.org/guidelines/creating-entries/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.retroachievements.org/guidelines/hashlabels/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.retroachievements.org/guidelines/overview/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.retroachievements.org/guidelines/rapatches/</loc>
+         <lastmod>2022-11-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.retroachievements.org/guidelines/working-with-the-right-rom/</loc>
          <lastmod>2022-11-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -457,31 +482,6 @@
     </url>
     <url>
          <loc>https://docs.retroachievements.org/guidelines/devs/unwelcome-concepts/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.retroachievements.org/guidelines/entry-mgmt/compatibility-testing/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.retroachievements.org/guidelines/entry-mgmt/creating-entries/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.retroachievements.org/guidelines/entry-mgmt/hashlabels/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.retroachievements.org/guidelines/entry-mgmt/rapatches/</loc>
-         <lastmod>2022-11-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.retroachievements.org/guidelines/entry-mgmt/working-with-the-right-rom/</loc>
          <lastmod>2022-11-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
