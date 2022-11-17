@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/development/andnext-ornext/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2679,7 +2679,7 @@
 
   <h1>AndNext and OrNext Flags</h1>
 
-<p><code>AndNext</code> and <code>OrNext</code> are used to associate more than one condition to a <a href="ResetIf-Flag">ResetIf</a>, <a href="PauseIf-Flag">PauseIf</a>, or <a href="Hit-Counts">Hit Count</a>.</p>
+<p><code>AndNext</code> and <code>OrNext</code> are used to associate more than one condition to a <a href="/development/resetif/">ResetIf</a>, <a href="/development/pauseif/">PauseIf</a>, or <a href="/development/hit-counts/">Hit Count</a>.</p>
 <p><code>AndNext</code> and <code>OrNext</code> can be chosen in the Flag column of the Achievement Editor</p>
 <p>When a condition has the <code>AndNext</code> flag, the condition must be true <em>in addition to the following condition</em> for the following condition to be considered true. </p>
 <p>When a condition has the <code>OrNext</code> flag, the condition <em>or the following condition</em> must be true for the following condition to be considered true.</p>
@@ -2695,7 +2695,7 @@ ResetIf F=1
 Represents the following logical statement:<br />
 <div class="highlight"><pre><span></span><code>reset if (((((A = 1 &amp;&amp; B = 1) || C = 1) &amp;&amp; D = 1) || E = 1) &amp;&amp; F = 1)
 </code></pre></div><br />
-<a href="Alt-Groups">Alt Groups</a> are still preferred over <code>OrNext</code> for most use cases. They allow for multiple conditions to be present in each clause of the OR, and support more than two clauses.</p>
+<a href="/development/alt-groups/">Alt Groups</a> are still preferred over <code>OrNext</code> for most use cases. They allow for multiple conditions to be present in each clause of the OR, and support more than two clauses.</p>
 <p><code>AndNext</code> is not required for simple logic. All conditions in a group are automatically AND'd together. <code>AndNext</code> just allows for two or more conditions to affect a single <code>PauseIf</code>, <code>ResetIf</code>, or <code>Hit Count</code>.</p>
 
               

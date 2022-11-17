@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/development/rich-presence/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2902,7 +2902,7 @@ It breaks down into a series of Lookup objects, Format objects and one Display o
 <h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
 <p>A macro converts a value into a user-friendly string. Macros are placed within a display string and will be replaced when the display string is evaluated. A macro starts with an <code>@</code>, then the name of the macro, an opening parenthesis, the value to evaluate, and a closing parenthesis.</p>
 <p><code>@Macro(0xh1234)</code> says read the byte at $1234, transform it using the <code>Macro</code> macro, and place the result in the display string where the macro had been.</p>
-<p>Parameters for each macro are constructed using a <a href="Value-Definition">value definition</a>.</p>
+<p>Parameters for each macro are constructed using a <a href="/development/value-definition">value definition</a>.</p>
 <h2 id="lookups">Lookups<a class="headerlink" href="#lookups" title="Permanent link">&para;</a></h2>
 <p>Lookups are defined like this: <br />
 <div class="highlight"><pre><span></span><code>Lookup:NameOfLookup
@@ -3062,7 +3062,7 @@ Playing Battle @Battle(0x 00007c*0.2) in @Landscape(0xH00016c)
 <p>if the 8-bit value at $1234 is 32 <em>and</em> the 8-bit value at $5678 is 33 <em>and</em> the 8-bit value at $2345 is 1 <em>or</em> 2, display <code>and/or example</code></p>
 </li>
 </ul>
-<p><strong>Pro-tip:</strong> Conditions can be created using the <a href="Achievement-Logic-Features">achievement editor</a>. Once you have your condition defined, use the <code>Copy Def</code> button to copy the achievement definition to the clipboard so you can paste it into the rich presence script.</p>
+<p><strong>Pro-tip:</strong> Conditions can be created using the <a href="/development/logic-features-home/">achievement editor</a>. Once you have your condition defined, use the <code>Copy Def</code> button to copy the achievement definition to the clipboard so you can paste it into the rich presence script.</p>
 <h2 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h2>
 <ul>
 <li>65,535 character limit for script  </li>
@@ -3081,7 +3081,7 @@ Playing Battle @Battle(0x 00007c*0.2) in @Landscape(0xH00016c)
 <li>Putting spaces in your Lookups sometimes before or after can allow you to hide certain lookups when they are not needed, like how <code>@Pause</code>, <code>@Star</code>, <code>@Swimming</code>, and <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Mode" title="GitHub User: Mode">@Mode</a> do. </li>
 </ul>
 <h3 id="value-properties">Value Properties<a class="headerlink" href="#value-properties" title="Permanent link">&para;</a></h3>
-<p>When using lookup and format objects <code>@object()</code> it's possible to combine and perform calculations. Macro values support everything that <a href="Leaderboards#value">leaderboard values</a> support, so you can use multiplication, addition, and even some logic to generate values that aren't directly available in memory.</p>
+<p>When using lookup and format objects <code>@object()</code> it's possible to combine and perform calculations. Macro values support everything that <a href="/development/leaderboards#value">leaderboard values</a> support, so you can use multiplication, addition, and even some logic to generate values that aren't directly available in memory.</p>
 <p><strong>Example</strong><br />
 <code>@Score(0xh28*10_0xh29*1000_0xh26*100000) points</code> </p>
 <p>This means use the Lookup or Format <code>Score</code>, and give it the sum of:<br />

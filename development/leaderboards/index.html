@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/development/leaderboards/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2819,7 +2819,7 @@
 <p>If the <strong>Submit</strong> (<strong>SUB</strong>) condition is true, then the leaderboard score will be submitted. NOTE: Cancel is given priority over Submit. If both become true in the same frame, the score will not be submitted.</p>
 <p>Finally, the <strong>Value</strong> (<strong>VAL</strong>) is a special case, and will be taken from memory using the formula stated in the memory box. This is the score that gets displayed while the leaderboard is active, and the value that's submitted if <strong>SUB</strong> is true.</p>
 <p>NOTE: Once an active leaderboard is cancelled or submitted, it cannot be reactivated until the <strong>Start</strong> condition becomes false, then true again. This prevents the leaderboard from immediately reactivating after submission/cancel.</p>
-<p><strong>Pro-tip:</strong> <strong>STA</strong>, <strong>CAN</strong>, and <strong>SUB</strong> support all logic available in the <a href="Achievement-Logic-Features">achievement editor</a>. The easiest way to make sure you get them written correctly is to create local achievements that capture the events, then use the <code>Copy Def</code> button to copy the achievement definition to the clipboard so you can paste it into the editor on the website.</p>
+<p><strong>Pro-tip:</strong> <strong>STA</strong>, <strong>CAN</strong>, and <strong>SUB</strong> support all logic available in the <a href="/development/logic-features-home/">achievement editor</a>. The easiest way to make sure you get them written correctly is to create local achievements that capture the events, then use the <code>Copy Def</code> button to copy the achievement definition to the clipboard so you can paste it into the editor on the website.</p>
 <h2 id="address-format">Address Format<a class="headerlink" href="#address-format" title="Permanent link">&para;</a></h2>
 <p>The memory addresses for STA/CAN/SUB/VAL have the following format:</p>
 <table>
@@ -2947,7 +2947,7 @@
 <p><strong>NOTE</strong>: The value calculation is performed using 32-bit signed integers. As such, the maximum value is 2147483647 and the minimum value is -2147483648. Values above the maximum will wrap around and register as very negative numbers. </p>
 <p>The value condition is special in a few ways. It is evaluated constantly and shown on-screen all the time when the leaderboard is active. </p>
 <p>There is also a symbol which only works in this field. Connecting two value conditions with <code>$</code> will cause only the one with the highest value to be used.</p>
-<p>Many games use <a href="Rich-Presence#binary-coded-decimal-bcd">Binary Coded Decimal</a> to encode scores. You can have the runtime decode BCD values by putting a <code>b</code> prefix in front of the memory reference (i.e. <code>b0xW1234</code>)</p>
+<p>Many games use <a href="/development/rich-presence#binary-coded-decimal-bcd">Binary Coded Decimal</a> to encode scores. You can have the runtime decode BCD values by putting a <code>b</code> prefix in front of the memory reference (i.e. <code>b0xW1234</code>)</p>
 <h4 id="value-from-measured">Value from Measured<a class="headerlink" href="#value-from-measured" title="Permanent link">&para;</a></h4>
 <p>Starting with the 0.77 DLL (and RetroArch 1.8.2), you can use the Measured flag to generate a Value. This supports all logic supported by the achievement editor, but every condition must have a flag that somehow influences the Measured value (i.e. AddSource, AddAddress).</p>
 <p><strong>VAL</strong>: <code>A:0xhfe24_A:0xhfe25*60_M:0xhfe22*3600</code></p>
@@ -2980,7 +2980,7 @@ Would submit the number of times the byte at $1234 changed to something other th
 <p>To add a constant, use <code>_vN</code> where N is the constant in decimal (i.e. <code>_v10</code>) will add 10 to the result. You can also use negative values for N (i.e. <code>_v-10</code> will subtract 10 from the result.</p>
 <p><strong>Tip</strong>: modifier can be a non-integer value, so if you need to divide by two, you can multiply by 0.5: <code>0xhfe24*0.5</code></p>
 <h3 id="value-format">Value Format<a class="headerlink" href="#value-format" title="Permanent link">&para;</a></h3>
-<p>'Format' can be any of the available <a href="Rich-Presence#format">formats</a>, but the editor currently only provides <strong>Score</strong>, <strong>Time (Frames)</strong>, <strong>Time (Milliseconds)</strong> and <strong>Value</strong>. <strong>Time (Frames)</strong> is the most common one, and represents a time derived from a value that increments every frame. It does this by multiplying by 100 (to convert to hundredths of a second) and dividing by 60 (the number of frames per second).</p>
+<p>'Format' can be any of the available <a href="/development/rich-presence#format">formats</a>, but the editor currently only provides <strong>Score</strong>, <strong>Time (Frames)</strong>, <strong>Time (Milliseconds)</strong> and <strong>Value</strong>. <strong>Time (Frames)</strong> is the most common one, and represents a time derived from a value that increments every frame. It does this by multiplying by 100 (to convert to hundredths of a second) and dividing by 60 (the number of frames per second).</p>
 <p><strong>NOTE</strong>: If you're using a system that doesn't run at 60Hz, you have to use "Time (millisecs)" and multiply by some value to do the conversion yourself (50Hz = <code>*2</code> [100/50], 60Hz = <code>*1.666666</code> [100/60], 75Hz =<code>*1.333333</code> [100/75]).</p>
 <p><strong>NOTE</strong>: <strong>Time (Milliseconds)</strong> is actually hundredths of a second, not thousandths of a second. i.e. a Value of 6234 would be 62.34 seconds, not 6.234 seconds.</p>
 <h2 id="further-help">Further help<a class="headerlink" href="#further-help" title="Permanent link">&para;</a></h2>

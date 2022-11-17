@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/development/pauseif/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2714,7 +2714,7 @@
   <h1>PauseIf Flag</h1>
 
 <p>The <code>PauseIf</code> can be chosen in the Flag column of the Achievement Editor.</p>
-<p>While true, the <code>PauseIf</code> pauses activity for most conditions <strong>in the same group</strong>. It <em>does not</em> pause conditions in other groups (more about <a href="Alt-Groups">Alt Groups</a> below).</p>
+<p>While true, the <code>PauseIf</code> pauses activity for most conditions <strong>in the same group</strong>. It <em>does not</em> pause conditions in other groups (more about <a href="/development/alt-groups/">Alt Groups</a> below).</p>
 <p><strong>Note</strong>: Keep in mind that <code>PauseIf</code> has priority over a <code>ResetIf</code> condition! In other words <strong><code>ResetIf</code> won't work while a <code>PauseIf</code> is active in the same group</strong>.</p>
 <p>The <code>PauseIf</code> is usually used to prevent hit counts from going up during a specific situation (like when the game is paused). It's used when you want to keep previously earned hit count, but don't want to increment it or reset it while something else is going on.</p>
 <p><strong>Also Note</strong>: A <code>ResetNextIf</code> condition attached to the active <code>PauseIf</code> condition is <em>not</em> paused. However, a <code>ResetNextIf</code> outside of the active <code>PauseIf</code> does get paused. This is the only case where a condition inside a paused group can still work. <code>ResetNextIf</code> attached to a <code>PauseIf</code> is useful for resetting a <code>PauseIf</code> with hit counts (see below) to unpause a group without resetting hit counts elsewhere in the group.</p>

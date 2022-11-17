@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/development/value-definition/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2759,11 +2759,11 @@
 
   <h1>Value Definition</h1>
 
-<p>Value definitions are used for <a href="Leaderboards#value">leaderboards</a> and <a href="Rich-Presence#value-properties">rich presence</a>.</p>
-<p>A value is calculated by evaluating one or more <a href="Condition-Syntax">memory reads</a>. Read values can be scaled (multiplication) or summed (addition) to arrive at the final value.</p>
+<p>Value definitions are used for <a href="/development/leaderboards#value">leaderboards</a> and <a href="/development/rich-presence#value-properties">rich presence</a>.</p>
+<p>A value is calculated by evaluating one or more <a href="/development/condition-syntax/">memory reads</a>. Read values can be scaled (multiplication) or summed (addition) to arrive at the final value.</p>
 <p><strong>NOTE</strong>: Value calculations are performed using 32-bit signed integers. As such, the maximum value is 2147483647 and the minimum value is -2147483648. Values above the maximum will wrap around and register as very negative numbers. </p>
 <h3 id="value-from-measured">Value from Measured<a class="headerlink" href="#value-from-measured" title="Permanent link">&para;</a></h3>
-<p>Starting with the 0.77 DLL (and RetroArch 1.8.2), you can use the <a href="Measured-Flag">Measured</a> flag to generate a Value. This supports all logic supported by the achievement editor, but every condition must have a flag that somehow influences the Measured value (i.e. <a href="AddSource-Flag">AddSource</a>, <a href="AddAddress-Flag">AddAddress</a>). Note that the Measured condition cannot have a multiplier directly on it. If the final clause needs to be multiplied, use an additional AddSource and Measure 0.</p>
+<p>Starting with the 0.77 DLL (and RetroArch 1.8.2), you can use the <a href="/development/measured/">Measured</a> flag to generate a Value. This supports all logic supported by the achievement editor, but every condition must have a flag that somehow influences the Measured value (i.e. <a href="/development/addsource/">AddSource</a>, <a href="/development/addaddress/">AddAddress</a>). Note that the Measured condition cannot have a multiplier directly on it. If the final clause needs to be multiplied, use an additional AddSource and Measure 0.</p>
 <p><strong>VAL</strong>: <code>A:0xhfe24_A:0xhfe25*60_A:0xhfe22*3600_M:0</code></p>
 <p>The example provided above reads:<br />
 <div class="highlight"><pre><span></span><code>AddSource 8-bit 0xfe24
@@ -2774,7 +2774,7 @@ Measured  Value 0
 <p>The addresses represent frames, seconds, and minutes respectively, and are individually multiplied and then added together to create a total number of frames that can be submitted to the database.</p>
 <h3 id="value-from-hitcount">Value from HitCount<a class="headerlink" href="#value-from-hitcount" title="Permanent link">&para;</a></h3>
 <p>Sometimes you want to count the number of times something happens and submit that as the value. You can also do this using Measured syntax. Just add a comparison to your final condition. Do not include an explicit Hit target, or that will be the maximum value that can be submitted.</p>
-<p>The <a href="Hit-Counts">HitCount</a> on the condition will automatically be set to 0 when the leaderboard starts, and the HitCount will be submitted as the Value when the leaderboard submit trigger activates. You can use <a href="PauseIf-Flag">PauseIf</a> and <a href="ResetIf-Flag">ResetIf</a> within the Value conditions to further control the behavior.</p>
+<p>The <a href="/development/hit-counts/">HitCount</a> on the condition will automatically be set to 0 when the leaderboard starts, and the HitCount will be submitted as the Value when the leaderboard submit trigger activates. You can use <a href="/development/pauseif/">PauseIf</a> and <a href="/development/resetif/">ResetIf</a> within the Value conditions to further control the behavior.</p>
 <p>For example:<br />
 <div class="highlight"><pre><span></span><code>M:0xH1234!=d0xH1234
 </code></pre></div><br />

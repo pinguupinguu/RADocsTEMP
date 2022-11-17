@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.retroachievements.org/games/libretro-core-support/">
       
       <link rel="icon" href="../../icons/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.3.9">
     
     
       
@@ -2799,7 +2799,7 @@
 <p>The GameBoy Color has 32KB of RAM broken into eight 4KB banks. Normally, the first bank is exposed at $C000, and the other seven banks are paged into the $D000 memory space. As RetroAchievements only process data once per frame, we can't rely on the correct data being in the $D000 page when we evaluate our logic, so we ask that $D000 always only contains bank 1, and banks 2-7 are exposed at <span class="arithmatex"><span class="MathJax_Preview">10000-</span><script type="math/tex">10000-</script></span>15FFF (addresses which are not normally used by the GameBoy Color).</p>
 <h3 id="immutable-game-data">Immutable Game Data<a class="headerlink" href="#immutable-game-data" title="Permanent link">&para;</a></h3>
 <p>The other important thing for a core to consider is that the game files should not be modified.</p>
-<p>RetroAchievements <a href="Game-Identification">hashes a portion of the game data</a> (usually most or all of it) to ensure the player is using a compatible version of the game. If the hash doesn't match exactly, we don't enable achievements. This ensures that regional variants are only allowed if their memory lines up correctly. It also ensures players aren't playing on a hacked version where they have infinite health or some other cheat applied.</p>
+<p>RetroAchievements <a href="/games/game-identification/">hashes a portion of the game data</a> (usually most or all of it) to ensure the player is using a compatible version of the game. If the hash doesn't match exactly, we don't enable achievements. This ensures that regional variants are only allowed if their memory lines up correctly. It also ensures players aren't playing on a hacked version where they have infinite health or some other cheat applied.</p>
 <p>If the game files are modified by the core, the hash may change and the game will no longer be identified.</p>
 <p>Any modifications to the game files should be handled through the <code>retro_serialize</code> interface.</p>
 <h3 id="core-settings">Core Settings<a class="headerlink" href="#core-settings" title="Permanent link">&para;</a></h3>
